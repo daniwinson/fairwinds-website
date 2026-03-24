@@ -152,23 +152,37 @@
     @media(max-width:600px) { .reviews-grid { grid-template-columns:1fr; } .source-cards { grid-template-columns:1fr; } .filter-bar { width:100%; } }
 
   
-    /* Photo Mosaic */
-    .photo-mosaic { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:260px 160px; gap:4px; max-width:1200px; margin:0 auto; background:var(--navy); padding:0; }
-    .mosaic-hero { grid-row:1 / 3; overflow:hidden; }
-    .mosaic-hero img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; transition:transform 0.5s; }
-    .mosaic-hero:hover img { transform:scale(1.03); }
-    .mosaic-side { display:grid; grid-template-rows:260px 160px; gap:4px; }
-    .mosaic-top { overflow:hidden; }
-    .mosaic-top img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform 0.5s; }
-    .mosaic-top:hover img { transform:scale(1.03); }
-    .mosaic-bottom { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
-    .mosaic-small { overflow:hidden; }
-    .mosaic-small img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform 0.5s; }
-    .mosaic-small:hover img { transform:scale(1.04); }
+        /* Photo Mosaic */
+    .photo-mosaic { display:grid; grid-template-columns:1fr 1fr; gap:4px; max-width:1300px; margin:0 auto; background:var(--navy); }
+    .mosaic-hero { grid-row:1 / 3; height:440px; overflow:hidden; position:relative; }
+    .mosaic-hero img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
+    .mosaic-top { height:216px; overflow:hidden; position:relative; }
+    .mosaic-top img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
+    .mosaic-side { display:flex; flex-direction:column; gap:4px; }
+    .mosaic-bottom { display:grid; grid-template-columns:1fr 1fr; gap:4px; flex:1; }
+    .mosaic-small { height:216px; overflow:hidden; position:relative; }
+    .mosaic-small img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
+    .mosaic-clickable { cursor:pointer; }
+    .mosaic-clickable:hover img { transform:scale(1.04); }
+    .mosaic-zoom { position:absolute; bottom:10px; right:12px; color:rgba(255,255,255,0.7); font-size:1.1rem; opacity:0; transition:opacity 0.25s; pointer-events:none; }
+    .mosaic-clickable:hover .mosaic-zoom { opacity:1; }
+
+    /* Mosaic lightbox */
+    #mosaic-lightbox { display:none; position:fixed; inset:0; z-index:500; background:rgba(5,12,24,0.96); align-items:center; justify-content:center; }
+    #mosaic-lightbox.open { display:flex; }
+    #mlb-img { max-width:90vw; max-height:88vh; object-fit:contain; display:block; }
+    .mlb-close { position:fixed; top:24px; right:32px; background:none; border:none; color:var(--gold); font-size:2rem; cursor:pointer; z-index:10; }
+    .mlb-prev, .mlb-next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(10,22,40,0.6); border:1px solid rgba(201,168,76,0.3); color:var(--gold); font-size:1.4rem; padding:14px 18px; cursor:pointer; z-index:10; }
+    .mlb-prev { left:16px; }
+    .mlb-next { right:16px; }
+
     @media(max-width:640px) {
-      .photo-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-      .mosaic-hero { grid-row:1; grid-column:1 / 3; height:220px; }
-      .mosaic-side { grid-column:1 / 3; grid-template-rows:auto; }
+      .photo-mosaic { grid-template-columns:1fr; }
+      .mosaic-hero { grid-row:auto; height:240px; }
+      .mosaic-side { gap:4px; }
+      .mosaic-top { height:180px; }
+      .mosaic-small { height:150px; }
+    }
       .mosaic-top { height:160px; }
       .mosaic-bottom { height:120px; }
     }</style>
@@ -231,22 +245,34 @@
 </section>
 
 <div class="photo-mosaic">
-  <div class="mosaic-hero">
-    <img src="reviews-strip-01-guests-under-full-sail-off-newport-beach.jpg" alt="Guests under full sail off Newport Beach" loading="lazy" />
+  <div class="mosaic-hero mosaic-clickable" onclick="openMosaicLightbox(0)">
+    <img src="reviews-strip-01-guests-under-full-sail-off-newport-beach.jpg" alt="Guests under full sail off Newport Beach" loading="lazy" style="object-position:center 30%;" />
+    <div class="mosaic-zoom">&#8599;</div>
   </div>
   <div class="mosaic-side">
-    <div class="mosaic-top">
-      <img src="reviews-strip-00-couple-at-helm.jpg" alt="Couple at the helm" loading="lazy" />
+    <div class="mosaic-top mosaic-clickable" onclick="openMosaicLightbox(1)">
+      <img src="reviews-strip-00-couple-at-helm.jpg" alt="Couple at the helm" loading="lazy" style="object-position:center 25%;" />
+      <div class="mosaic-zoom">&#8599;</div>
     </div>
     <div class="mosaic-bottom">
-      <div class="mosaic-small">
-        <img src="reviews-strip-02-captain-dale-at-sea.jpg" alt="Captain Dale at sea with guests" loading="lazy" />
+      <div class="mosaic-small mosaic-clickable" onclick="openMosaicLightbox(2)">
+        <img src="reviews-strip-02-captain-dale-at-sea.jpg" alt="Captain Dale at sea with guests" loading="lazy" style="object-position:center 20%;" />
+        <div class="mosaic-zoom">&#8599;</div>
       </div>
-      <div class="mosaic-small">
-        <img src="reviews-strip-03-guests-relaxing-on-the-water.jpg" alt="Guests relaxing on the water" loading="lazy" />
+      <div class="mosaic-small mosaic-clickable" onclick="openMosaicLightbox(3)">
+        <img src="reviews-strip-03-guests-relaxing-on-the-water.jpg" alt="Guests relaxing on the water" loading="lazy" style="object-position:center 40%;" />
+        <div class="mosaic-zoom">&#8599;</div>
       </div>
     </div>
   </div>
+</div>
+
+<div id="mosaic-lightbox">
+  <button class="mlb-close" onclick="closeMosaicLightbox()">✕</button>
+  <button class="mlb-prev" onclick="mosaicLBNav(-1)">&#8592;</button>
+  <button class="mlb-next" onclick="mosaicLBNav(1)">&#8594;</button>
+  <img id="mlb-img" src="" alt="" />
+</div>
 </div>
 </div>
 
@@ -516,6 +542,32 @@ const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60));
 document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileNav").classList.add("open"));
 document.getElementById("mobileNavClose").addEventListener("click", () => document.getElementById("mobileNav").classList.remove("open"));
+
+
+const MOSAIC_IMGS = [
+  'reviews-strip-01-guests-under-full-sail-off-newport-beach.jpg',
+  'reviews-strip-00-couple-at-helm.jpg',
+  'reviews-strip-02-captain-dale-at-sea.jpg',
+  'reviews-strip-03-guests-relaxing-on-the-water.jpg'
+];
+let mosaicIdx = 0;
+function openMosaicLightbox(idx) {
+  mosaicIdx = idx;
+  document.getElementById('mlb-img').src = MOSAIC_IMGS[idx];
+  document.getElementById('mosaic-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMosaicLightbox() {
+  document.getElementById('mosaic-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function mosaicLBNav(dir) {
+  mosaicIdx = (mosaicIdx + dir + MOSAIC_IMGS.length) % MOSAIC_IMGS.length;
+  document.getElementById('mlb-img').src = MOSAIC_IMGS[mosaicIdx];
+}
+document.getElementById('mosaic-lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeMosaicLightbox();
+});
 
 </script>
 </body>
