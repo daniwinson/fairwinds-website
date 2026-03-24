@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviews &amp; Testimonials — Fairwinds Yacht Charters Newport Beach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0a1628; --navy-mid: #122040; --navy-lt: #1a3058;
+      --gold: #c9a84c; --gold-lt: #e8c97a; --gold-dk: #9b7a2f;
+      --cream: #f5f0e8; --white: #ffffff; --text-lt: #d4c9b0;
+      --gap: clamp(40px, 6vw, 96px);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; background: var(--navy); color: var(--cream); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(to bottom, rgba(10,22,40,0.97), rgba(10,22,40,0)); transition: background 0.4s; }
+    nav.scrolled { background: rgba(10,22,40,0.97) !important; border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo span { font-size: 0.55rem; letter-spacing: 0.35em; color: var(--text-lt); font-family: 'Raleway', sans-serif; font-weight: 300; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 24px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+    .nav-cta:hover { background: var(--gold); color: var(--navy); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { width: 24px; height: 1px; background: var(--gold); }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 200; background: var(--navy); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--white); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+    .mobile-nav-close { position: absolute; top: 24px; right: 32px; background: none; border: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; }
+    section { padding: var(--gap) clamp(20px, 5vw, 80px); }
+    .section-label { font-weight: 300; font-size: 0.68rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; color: var(--white); }
+    .section-title em { font-style: italic; color: var(--gold-lt); }
+    .btn-primary { background: var(--gold); color: var(--navy); padding: 16px 40px; border: none; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; transition: all 0.3s; text-decoration: none; display: inline-block; }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--cream); padding: 14px 36px; border: 1px solid rgba(255,255,255,0.35); font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; text-decoration: none; display: inline-block; cursor: pointer; }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    footer { background: #070f1e; border-top: 1px solid rgba(201,168,76,0.15); padding: 64px clamp(20px,5vw,80px) 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.9; color: var(--text-lt); font-weight: 300; max-width: 280px; margin-top: 20px; }
+    .footer-col h4 { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 500; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: var(--text-lt); text-decoration: none; font-size: 0.82rem; font-weight: 300; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-col address { font-style: normal; font-size: 0.82rem; color: var(--text-lt); line-height: 1.9; font-weight: 300; }
+    .footer-col address a { color: var(--gold-lt); text-decoration: none; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 0.72rem; color: rgba(201,168,76,0.4); letter-spacing: 0.05em; }
+    /* Lightbox */
+    #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(5,12,24,0.97); align-items: center; justify-content: center; flex-direction: column; }
+    #lightbox.open { display: flex; }
+    #lb-img { max-width: 90vw; max-height: 80vh; object-fit: contain; display: block; transition: opacity 0.2s; }
+    #lb-img.fading { opacity: 0; }
+    .lb-caption { margin-top: 16px; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: var(--cream); text-align: center; }
+    .lb-counter { font-size: 0.65rem; letter-spacing: 0.25em; color: var(--text-lt); margin-top: 6px; text-align: center; }
+    .lb-close { position: fixed; top: 28px; right: 36px; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; z-index: 10; transition: transform 0.2s; }
+    .lb-close:hover { transform: rotate(90deg); }
+    .lb-prev, .lb-next { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(10,22,40,0.6); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 1.5rem; padding: 16px 20px; cursor: pointer; transition: all 0.2s; z-index: 10; }
+    .lb-prev { left: 24px; } .lb-next { right: 24px; }
+    .lb-prev:hover, .lb-next:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+    .lb-thumbstrip { display: flex; gap: 6px; margin-top: 16px; max-width: 90vw; overflow-x: auto; padding-bottom: 4px; }
+    .lb-strip-thumb { width: 60px; height: 45px; object-fit: cover; cursor: pointer; opacity: 0.45; transition: opacity 0.2s; flex-shrink: 0; border: 1px solid transparent; }
+    .lb-strip-thumb.active, .lb-strip-thumb:hover { opacity: 1; border-color: var(--gold); }
+    @media (max-width: 900px) { .nav-links, .nav-cta { display: none; } .hamburger { display: flex; } .footer-inner { grid-template-columns: 1fr 1fr; } .lb-prev { left: 8px; } .lb-next { right: 8px; } }
+    @media (max-width: 600px) { nav { padding: 16px 20px; } .footer-inner { grid-template-columns: 1fr; } }
+
+    .nav-logo-img { text-decoration:none; display:flex; align-items:center; }
+    .nav-logo-mark { height:48px; width:auto; display:block; }
+
+    /* HERO */
+    .page-hero { position:relative; height:50vh; min-height:360px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--navy); }
+    .page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 55% 40%, rgba(201,168,76,0.07) 0%, transparent 65%); }
+    .page-hero-content { position:relative; z-index:2; text-align:center; padding:80px clamp(20px,5vw,80px) 0; }
+    .page-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(2.8rem,6vw,5.5rem); line-height:0.95; color:var(--white); }
+    .page-title em { font-style:italic; color:var(--gold-lt); }
+    .page-subtitle { font-size:0.78rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--text-lt); margin-top:14px; }
+    .hero-divider { width:48px; height:1px; background:var(--gold); margin:22px auto 0; }
+
+    /* STATS */
+    .stats-band { background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.1); padding:44px clamp(20px,5vw,80px); }
+    .stats-inner { max-width:960px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+    .stat-num { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.4rem); color:var(--gold-lt); line-height:1; }
+    .stat-label { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-lt); margin-top:7px; line-height:1.6; }
+
+    /* FEATURED */
+    #featured { background:var(--navy); padding:var(--gap) clamp(20px,5vw,80px); }
+    .featured-inner { max-width:860px; margin:0 auto; text-align:center; }
+    .featured-quote-mark { font-family:'Cormorant Garamond',serif; font-size:6rem; color:rgba(201,168,76,0.12); line-height:0.6; display:block; margin-bottom:8px; }
+    .featured-quote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.25rem,2.5vw,1.85rem); font-weight:300; font-style:italic; color:var(--white); line-height:1.6; margin-bottom:28px; }
+    .featured-attr { font-size:0.78rem; letter-spacing:0.15em; color:var(--text-lt); }
+    .featured-attr strong { color:var(--gold); font-weight:400; }
+    .featured-link { display:inline-block; margin-top:14px; font-size:0.67rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(201,168,76,0.6); text-decoration:none; transition:color 0.2s; }
+    .featured-link:hover { color:var(--gold); }
+
+    /* PHOTO STRIP */
+    @media(max-width:600px) { }
+
+    /* REVIEWS */
+    #reviews { background:var(--navy-mid); }
+    .reviews-header { text-align:center; margin-bottom:40px; }
+    .filter-bar { display:flex; justify-content:center; margin:0 auto 20px; border:1px solid rgba(201,168,76,0.2); width:fit-content; overflow:hidden; flex-wrap:wrap; }
+    .filter-btn { background:none; border:none; border-right:1px solid rgba(201,168,76,0.2); color:var(--text-lt); font-family:'Raleway',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; padding:12px 26px; cursor:pointer; transition:all 0.25s; white-space:nowrap; }
+    .filter-btn:last-child { border-right:none; }
+    .filter-btn.active { background:var(--gold); color:var(--navy); font-weight:500; }
+    .filter-btn:not(.active):hover { color:var(--gold); background:rgba(201,168,76,0.06); }
+    .source-filter-bar { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; padding-bottom:40px; }
+    .source-filter-btn { background:none; border:1px solid rgba(201,168,76,0.2); color:var(--text-lt); font-family:'Raleway',sans-serif; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; padding:8px 20px; cursor:pointer; transition:all 0.25s; }
+    .source-filter-btn.active-gmb { border-color:#00a86b; color:#00a86b; background:rgba(0,168,107,0.08); }
+    .source-filter-btn.active-bs  { border-color:#0066cc; color:#0066cc; background:rgba(0,102,204,0.08); }
+    .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; max-width:1300px; margin:0 auto; }
+    .review-card { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.08); padding:32px 30px 28px; display:flex; flex-direction:column; transition:background 0.3s; }
+    .review-card:hover { background:var(--navy-lt); }
+    .review-card.hidden { display:none; }
+    .review-top { display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+    .reviewer-avatar { width:46px; height:46px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+    .reviewer-initials { display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--cream); background:hsl(var(--hue),30%,20%); border:1px solid hsl(var(--hue),40%,35%); }
+    .reviewer-details { flex:1; min-width:0; }
+    .reviewer-name { font-size:0.88rem; color:var(--cream); font-weight:400; margin-bottom:5px; }
+    .review-meta-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .review-source-badge { font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; padding:3px 8px; border:1px solid color-mix(in srgb, var(--src-color) 45%, transparent); color:var(--src-color); font-family:'Raleway',sans-serif; }
+    .verified-badge { font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(201,168,76,0.65); }
+    .review-body { font-size:0.84rem; line-height:1.9; color:var(--text-lt); font-weight:300; flex:1; margin-bottom:20px; font-style:italic; }
+    .review-bottom { display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.06); padding-top:14px; flex-wrap:wrap; gap:8px; }
+    .review-vessel-tag { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); }
+    .review-date { font-size:0.68rem; color:var(--text-lt); }
+
+    /* PLATFORMS */
+    #source { background:var(--navy); }
+    .source-inner { max-width:800px; margin:0 auto; text-align:center; }
+    .source-cards { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:44px; }
+    .source-card { background:var(--navy); border:1px solid rgba(201,168,76,0.1); padding:40px 36px; display:flex; flex-direction:column; align-items:center; gap:12px; transition:background 0.3s; }
+    .source-card:hover { background:var(--navy-lt); }
+    .source-platform { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--white); }
+    .source-rating { font-size:0.8rem; color:var(--gold); letter-spacing:0.1em; }
+    .source-desc { font-size:0.8rem; color:var(--text-lt); line-height:1.8; font-weight:300; text-align:center; max-width:260px; }
+    .source-link { font-size:0.67rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); text-decoration:none; margin-top:4px; transition:all 0.2s; border:1px solid rgba(201,168,76,0.3); padding:9px 22px; display:inline-block; }
+    .source-link:hover { color:var(--navy); background:var(--gold); }
+
+    /* CTA */
+    .cta-band { background:var(--navy-lt); border-top:1px solid rgba(201,168,76,0.15); padding:60px clamp(20px,5vw,80px); text-align:center; }
+    .cta-band h2 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.8rem,4vw,3rem); color:var(--white); margin-bottom:8px; }
+    .cta-band h2 em { font-style:italic; color:var(--gold-lt); }
+    .cta-band p { font-size:0.85rem; color:var(--text-lt); margin-bottom:32px; line-height:1.9; }
+    .cta-actions { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+    @media(max-width:960px) { .reviews-grid { grid-template-columns:repeat(2,1fr); } .stats-inner { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:600px) { .reviews-grid { grid-template-columns:1fr; } .source-cards { grid-template-columns:1fr; } .filter-bar { width:100%; } }
+
+  
+    /* Photo Mosaic */
+    .photo-mosaic { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:260px 160px; gap:4px; max-width:1200px; margin:0 auto; background:var(--navy); padding:0; }
+    .mosaic-hero { grid-row:1 / 3; overflow:hidden; }
+    .mosaic-hero img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; transition:transform 0.5s; }
+    .mosaic-hero:hover img { transform:scale(1.03); }
+    .mosaic-side { display:grid; grid-template-rows:260px 160px; gap:4px; }
+    .mosaic-top { overflow:hidden; }
+    .mosaic-top img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform 0.5s; }
+    .mosaic-top:hover img { transform:scale(1.03); }
+    .mosaic-bottom { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+    .mosaic-small { overflow:hidden; }
+    .mosaic-small img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform 0.5s; }
+    .mosaic-small:hover img { transform:scale(1.04); }
+    @media(max-width:640px) {
+      .photo-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+      .mosaic-hero { grid-row:1; grid-column:1 / 3; height:220px; }
+      .mosaic-side { grid-column:1 / 3; grid-template-rows:auto; }
+      .mosaic-top { height:160px; }
+      .mosaic-bottom { height:120px; }
+    }</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-logo-img">
+    <img src="logo-00.png" alt="Fairwinds Luxury Yacht Charter" class="nav-logo-mark" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#fleet">Our Fleet</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
+    <li><a href="fairwinds-consulting.html">Consulting</a></li>
+    <li><a href="fairwinds-reviews.html" class="active">Reviews</a></li>
+  </ul>
+  <a href="index.html#booking" class="nav-cta">Book a Charter</a>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <a href="index.html#fleet">Fleet</a>
+  <a href="fairwinds-lessons.html">Lessons</a>
+  <a href="fairwinds-consulting.html">Consulting</a>
+  <a href="fairwinds-reviews.html">Reviews</a>
+  <a href="index.html#booking">Book</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-label" style="display:block">What Our Guests Say</span>
+    <h1 class="page-title">Reviews &amp;<br><em>Testimonials</em></h1>
+    <p class="page-subtitle">Verified Reviews · GetMyBoat · Boatsetter</p>
+    <div class="hero-divider"></div>
+  </div>
+</div>
+
+<div class="stats-band">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">5.0</div>
+      <div style="display:flex;justify-content:center;margin:4px 0"><div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div></div>
+      <div class="stat-label">Average Rating<br>Across Platforms</div>
+    </div>
+    <div><div class="stat-num">16</div><div class="stat-label">Reviews on<br>GetMyBoat</div></div>
+    <div><div class="stat-num">5.0</div><div class="stat-label">Rating on<br>Boatsetter</div></div>
+    <div><div class="stat-num">25+</div><div class="stat-label">Bookings<br>Completed</div></div>
+  </div>
+</div>
+
+<section id="featured">
+  <div class="featured-inner">
+    <span class="section-label" style="display:block;text-align:center;margin-bottom:24px">Featured Review</span>
+    <span class="featured-quote-mark">"</span>
+    <div class="featured-quote">The boating adventure far exceeded my expectations and I couldn't have asked for a better evening out on the water. Everything was extremely quiet — all you could hear was the wind and the water.</div>
+    <div class="featured-attr">— <strong>Eugene</strong> &nbsp;·&nbsp; PatriciaAnn Charter &nbsp;·&nbsp; Verified GetMyBoat Guest</div>
+    <a href="https://www.getmyboat.com/trips/qNQAxkgN/#reviews" target="_blank" class="featured-link">Read all 16 reviews on GetMyBoat →</a>
+  </div>
+</section>
+
+<div class="photo-mosaic">
+  <div class="mosaic-hero">
+    <img src="reviews-strip-01-guests-under-full-sail-off-newport-beach.jpg" alt="Guests under full sail off Newport Beach" loading="lazy" />
+  </div>
+  <div class="mosaic-side">
+    <div class="mosaic-top">
+      <img src="reviews-strip-00-couple-at-helm.jpg" alt="Couple at the helm" loading="lazy" />
+    </div>
+    <div class="mosaic-bottom">
+      <div class="mosaic-small">
+        <img src="reviews-strip-02-captain-dale-at-sea.jpg" alt="Captain Dale at sea with guests" loading="lazy" />
+      </div>
+      <div class="mosaic-small">
+        <img src="reviews-strip-03-guests-relaxing-on-the-water.jpg" alt="Guests relaxing on the water" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<section id="reviews">
+  <div class="reviews-header">
+    <span class="section-label">Verified Guest Experiences</span>
+    <h2 class="section-title">From Our <em>Guests</em></h2>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterVessel('all',this)">All Vessels</button>
+    <button class="filter-btn" onclick="filterVessel('PatriciaAnn',this)">PatriciaAnn</button>
+    <button class="filter-btn" onclick="filterVessel('Patron',this)">Patron</button>
+    <button class="filter-btn" onclick="filterVessel('Cantius',this)">Cantius</button>
+  </div>
+  <div class="source-filter-bar">
+    <button class="source-filter-btn" id="btn-gmb" onclick="filterSource('GetMyBoat')">· GetMyBoat</button>
+    <button class="source-filter-btn" id="btn-bs"  onclick="filterSource('Boatsetter')">· Boatsetter</button>
+  </div>
+  <div class="reviews-grid" id="reviews-grid">
+    <div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <div class="reviewer-avatar reviewer-initials" style="--hue:224">HW</div>
+        <div class="reviewer-details">
+          <div class="reviewer-name">Heather</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#00a86b">GetMyBoat</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"Dale and his deckhand made our day absolutely perfect. It was an amazing birthday outing that is exactly what we needed. We cannot wait to rebook with them again ASAP because we had such an incredible time."</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        
+      </div>
+    </div>
+<div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <img src="https://img.getmyboat.com/images/48c47a5f-8fe3-4fdf-988c-57a328eca492/processed.png?fit=crop&w=64&h=64" alt="Diana" class="reviewer-avatar" />
+        <div class="reviewer-details">
+          <div class="reviewer-name">Diana</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#00a86b">GetMyBoat</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"Wonderful Father's Day sailing trip with Captain Dale and Danielle! Can not say enough and will totally book another day with them on this sailboat! All 6 of us had such a wonderful time. I really wanted to see dolphins on this trip and Captain Dale said that he had the dolphins on his payroll — well he has one heck of a payroll as hundreds showed up! We took a 4 hour trip which was just perfect, well maybe I would add one more hour!"</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        
+      </div>
+    </div>
+<div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <img src="https://img.getmyboat.com/images/bbb4250b-806c-477e-9a81-770450cffba2/processed.png?fit=crop&w=64&h=64" alt="John" class="reviewer-avatar" />
+        <div class="reviewer-details">
+          <div class="reviewer-name">John</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#00a86b">GetMyBoat</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"What a beautiful day. Nothing like being on the water on a sunny 70 degree day. Captain Dale and first mate Dawn were more than accommodating, imparted sailing knowledge to my two boys, and even made brownies. We also caught a glimpse of some dolphins and some sunning seals. Thanks for a great day!"</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        
+      </div>
+    </div>
+<div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <div class="reviewer-avatar reviewer-initials" style="--hue:298">JA</div>
+        <div class="reviewer-details">
+          <div class="reviewer-name">Jessica</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#00a86b">GetMyBoat</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"Dale was a wonderful Captain! He made sure we had everything we needed, and had great communication regarding our trip. He's very nice and made our group feel welcomed. His boat is very clean and comfortable. It was perfect for an afternoon cruise. There was plenty of room to spread out and enjoy the sun. I would absolutely recommend him to friends and use him again."</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        
+      </div>
+    </div>
+<div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <div class="reviewer-avatar reviewer-initials" style="--hue:113">EK</div>
+        <div class="reviewer-details">
+          <div class="reviewer-name">Eugene</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#00a86b">GetMyBoat</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"Dale is one of the most professional and friendly people I've had the pleasure of doing business with. He not only arranged everything for an incredible sunset cruise on his sailboat, but he also made cupcakes for my guests and me since it was my birthday. His boat was even better than pictured and had ample room for my guests and me. The most exciting part was being on the bow of the boat as the views were incredible! Since we used the boat's sails on the open ocean, everything was extremely quiet, and all you can hear was the wind and the water. The boating adventure far exceeded my expectations and I couldn't have asked for a better evening out on the water. Thank you again to Dale and his crew for an incredible experience!"</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        
+      </div>
+    </div>
+<div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <div class="reviewer-avatar reviewer-initials" style="--hue:12">L</div>
+        <div class="reviewer-details">
+          <div class="reviewer-name">Larry</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#0066cc">Boatsetter</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"Very spacious boat, lots of room for photos and even better views for watching dolphins. We went out to Emerald Bay and Dale showed us several pods of dolphins along the way."</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        <span class="review-date">September 2025</span>
+      </div>
+    </div>
+<div class="review-card" data-vessel="Mystic">
+      <div class="review-top">
+        <div class="reviewer-avatar reviewer-initials" style="--hue:12">L</div>
+        <div class="reviewer-details">
+          <div class="reviewer-name">Leony</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#0066cc">Boatsetter</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"My group and I had the best time on the beautiful Patron, Captain Dale and Erica were on top of their game! Weather was perfect and oh wow complete with dolphin shows — cannot wait to do it again. Thanks guys for the smooth cruising experience! My 50th birthday was super satisfying, such wonderful moments."</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">73' Patron</span>
+        <span class="review-date">August 2025</span>
+      </div>
+    </div>
+<div class="review-card" data-vessel="PatriciaAnn">
+      <div class="review-top">
+        <div class="reviewer-avatar reviewer-initials" style="--hue:12">L</div>
+        <div class="reviewer-details">
+          <div class="reviewer-name">Larry</div>
+          <div class="review-meta-row">
+            <div style="display:flex;align-items:center;"><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="12" height="12" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div>
+            <span class="review-source-badge" style="--src-color:#0066cc">Boatsetter</span>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+      <p class="review-body">"Dale was a great captain. We had great conversations throughout the trip. Dale was very attentive and met any need that we had. Would 100% book again."</p>
+      <div class="review-bottom">
+        <span class="review-vessel-tag">47' PatriciaAnn</span>
+        <span class="review-date">August 2025</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px;padding:0 20px;">
+    <a href="https://www.getmyboat.com/trips/qNQAxkgN/#reviews" target="_blank" class="btn-ghost" style="display:inline-block">View All 16 Reviews on GetMyBoat →</a>
+  </div>
+</section>
+
+<section id="source">
+  <div class="source-inner">
+    <span class="section-label" style="display:block;text-align:center">Where to Find Us</span>
+    <h2 class="section-title" style="text-align:center">Book with Confidence on<br><em>Verified Platforms</em></h2>
+    <div class="source-cards">
+      <div class="source-card">
+        <div style="display:flex;gap:2px"><div style="display:flex;align-items:center;"><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div></div>
+        <div class="source-platform">GetMyBoat</div>
+        <div class="source-rating">5.0 &nbsp;·&nbsp; 16 Reviews &nbsp;·&nbsp; Superowner</div>
+        <div class="source-desc">Read all verified guest reviews and book securely through GetMyBoat.</div>
+        <a href="https://www.getmyboat.com/trips/qNQAxkgN/#reviews" target="_blank" class="source-link">View Listing →</a>
+      </div>
+      <div class="source-card">
+        <div style="display:flex;gap:2px"><div style="display:flex;align-items:center;"><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg><svg width="13" height="13" viewBox="0 0 14 14" style="margin-right:2px;flex-shrink:0"><polygon points="7,1 8.8,5.5 13.6,5.5 9.9,8.5 11.2,13 7,10.3 2.8,13 4.1,8.5 0.4,5.5 5.2,5.5" fill="#c9a84c"/></svg></div></div>
+        <div class="source-platform">Boatsetter</div>
+        <div class="source-rating">5.0 &nbsp;·&nbsp; Verified Reviews</div>
+        <div class="source-desc">Browse our Boatsetter listing for availability, pricing, and verified reviews.</div>
+        <a href="https://www.boatsetter.com/boats/vsngzhc" target="_blank" class="source-link">View Listing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to Write Your<br><em>Own Review?</em></h2>
+  <p>Join our guests who've made unforgettable memories on Newport Harbor and beyond.</p>
+  <div class="cta-actions">
+    <a href="index.html#booking" class="btn-primary">Book a Charter</a>
+    <a href="tel:9495108682" class="btn-ghost">(949) 510-8682</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo-img"><img src="logo-00.png" alt="Fairwinds" class="nav-logo-mark" style="height:52px" /></a>
+      <p>Private yacht charters, professional captains, and bespoke sailing experiences on the waters of Newport Harbor and the California coast.</p>
+    </div>
+    <div class="footer-col"><h4>Fleet</h4><ul>
+      <li><a href="fairwinds-patriciaann.html">47' PatriciaAnn</a></li>
+      <li><a href="mystic.html">73' Mystic</a></li>
+      <li><a href="fairwinds-cantius.html">50' Cantius</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="index.html#services">Private Charter</a></li>
+      <li><a href="index.html#services">Captain Services</a></li>
+      <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
+      <li><a href="index.html#services">Bespoke Events</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br>
+      <a href="tel:9495108682">(949) 510-8682</a><br>
+      <a href="mailto:dale@fairwindsnewport.com">dale@fairwindsnewport.com</a><br><br>
+      <a href="https://www.instagram.com/fairwindsnewport/" target="_blank">@fairwindsnewport</a>
+    </address></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Fairwinds, LLC · Newport Beach, California</p>
+    <p style="color:rgba(201,168,76,0.3);font-size:0.65rem;letter-spacing:0.1em">USCG Licensed & Insured</p>
+  </div>
+</footer>
+
+<script>
+
+let activeVessel = 'all';
+let activeSource = null;
+function applyFilters() {
+  document.querySelectorAll('.review-card').forEach(card => {
+    const vesselMatch = activeVessel === 'all' || card.dataset.vessel.includes(activeVessel);
+    const srcBadge = card.querySelector('.review-source-badge');
+    const cardSource = srcBadge ? srcBadge.textContent.trim() : '';
+    const sourceMatch = !activeSource || cardSource === activeSource;
+    card.classList.toggle('hidden', !(vesselMatch && sourceMatch));
+  });
+}
+function filterVessel(vessel, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeVessel = vessel;
+  applyFilters();
+}
+function filterSource(src) {
+  const gmbBtn = document.getElementById('btn-gmb');
+  const bsBtn  = document.getElementById('btn-bs');
+  if (activeSource === src) {
+    activeSource = null;
+    gmbBtn.className = 'source-filter-btn';
+    bsBtn.className  = 'source-filter-btn';
+  } else {
+    activeSource = src;
+    gmbBtn.className = 'source-filter-btn' + (src === 'GetMyBoat'  ? ' active-gmb' : '');
+    bsBtn.className  = 'source-filter-btn' + (src === 'Boatsetter' ? ' active-bs'  : '');
+  }
+  applyFilters();
+}
+
+
+const nav = document.getElementById("nav");
+window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60));
+document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileNav").classList.add("open"));
+document.getElementById("mobileNavClose").addEventListener("click", () => document.getElementById("mobileNav").classList.remove("open"));
+
+</script>
+</body>
+</html>
