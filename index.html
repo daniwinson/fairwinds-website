@@ -214,6 +214,96 @@
     }
   
     @media(max-width:640px) { .services-grid { grid-template-columns:1fr; } }
+  
+    /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
+
+    /* Logo bigger */
+    .nav-logo-mark { height:64px !important; width:auto; }
+
+    /* Nav tighter so all items fit */
+    .nav-links { gap:clamp(6px,1.5vw,24px); }
+    .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
+    .nav-cta { padding:9px 14px; font-size:0.65rem; letter-spacing:0.12em; }
+
+    /* Hero eyebrow / subtitle visibility */
+    .hero-eyebrow { color:rgba(201,168,76,0.95) !important; font-size:0.75rem; text-shadow:0 1px 6px rgba(0,0,0,0.6); }
+    .page-subtitle { color:rgba(212,201,176,0.9) !important; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+
+    /* Footer responsive */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns:1fr 1fr !important; gap:32px; }
+    }
+    @media(max-width:540px) {
+      .footer-inner { grid-template-columns:1fr !important; gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; gap:8px; }
+    }
+
+    /* Pricing table scroll on mobile */
+    .pricing-section-inner, .pricing-tab-panel { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+    /* General section breathing room */
+    @media(max-width:600px) {
+      .section-title { font-size:clamp(1.7rem,6.5vw,3rem) !important; }
+      section { padding:clamp(36px,7vw,72px) 0; }
+    }
+
+    /* Nav hamburger adjustments */
+    @media(max-width:900px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex !important; }
+      .nav-cta { display:none; }
+    }
+    @media(min-width:901px) {
+      .hamburger { display:none !important; }
+      .nav-links { display:flex !important; }
+      .nav-cta { display:inline-block !important; }
+    }
+
+    /* Fleet section responsive */
+    @media(max-width:1000px) {
+      .yacht-hero { grid-template-columns:1fr !important; }
+      .yacht-info { padding:28px !important; }
+    }
+    @media(max-width:700px) {
+      .yacht-tabs { flex-wrap:wrap; }
+      .yacht-tab-btn { padding:12px 20px; font-size:0.68rem; }
+    }
+    /* Stats band */
+    @media(max-width:700px) {
+      .stats-inner, .agg-inner { grid-template-columns:repeat(2,1fr) !important; gap:16px; }
+    }
+    @media(max-width:380px) {
+      .stats-inner, .agg-inner { grid-template-columns:1fr !important; }
+    }
+    /* Services grid */
+    @media(max-width:640px) {
+      .services-grid { grid-template-columns:1fr !important; }
+    }
+    /* Add-ons grid */
+    @media(max-width:700px) {
+      .addons-grid { grid-template-columns:repeat(2,1fr) !important; }
+    }
+    @media(max-width:440px) {
+      .addons-grid { grid-template-columns:1fr !important; }
+    }
+    /* Hero actions stack on mobile */
+    @media(max-width:500px) {
+      .hero-actions { flex-direction:column; align-items:center; gap:12px; }
+      .hero-actions a { width:100%; text-align:center; max-width:280px; }
+    }
+    /* Booking form */
+    @media(max-width:700px) {
+      .booking-grid, .form-grid { grid-template-columns:1fr !important; }
+    }
+    /* Pricing tabs */
+    @media(max-width:600px) {
+      .pricing-tabs { flex-wrap:wrap; }
+      .pricing-tab-btn { padding:10px 16px; font-size:0.66rem; }
+    }
+    @media(max-width:800px) {
+      .pricing-table th, .pricing-table td { padding:10px 12px; font-size:0.78rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -392,7 +482,7 @@
       <button class="tab-btn" onclick="switchTab('captain',this)">Captain Services</button>
     </div>
     <div class="tab-panel active" id="tab-sailboat">
-      <table class="pricing-table"><thead><tr><th>Duration</th><th>Weekday</th><th>Weekend</th><th>Notes</th></tr></thead><tbody>
+      <div class="pricing-table-scroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="pricing-table"><thead><tr><th>Duration</th><th>Weekday</th><th>Weekend</th><th>Notes</th></tr></thead><tbody>
         <tr><td>4 Hours</td><td class="price-cell">$950</td><td class="price-cell">$1,100</td><td class="note">Up to 6 guests · Captain included</td></tr>
         <tr><td>6 Hours</td><td class="price-cell">$1,350</td><td class="price-cell">$1,550</td><td class="note">Fuel included · Departs Newport Harbor</td></tr>
         <tr><td>8 Hours</td><td class="price-cell">$1,700</td><td class="price-cell">$1,950</td><td class="note">Catalina day trip available</td></tr>
@@ -400,7 +490,7 @@
       </tbody></table>
     </div>
     <div class="tab-panel" id="tab-patron">
-      <table class="pricing-table"><thead><tr><th>Duration</th><th>Weekday</th><th>Weekend</th><th>Notes</th></tr></thead><tbody>
+      <div class="pricing-table-scroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="pricing-table"><thead><tr><th>Duration</th><th>Weekday</th><th>Weekend</th><th>Notes</th></tr></thead><tbody>
         <tr><td>4 Hours</td><td class="price-cell">$2,400</td><td class="price-cell">$2,800</td><td class="note">Up to 12 guests · Captain included</td></tr>
         <tr><td>6 Hours</td><td class="price-cell">$3,400</td><td class="price-cell">$3,900</td><td class="note">Full galley · Premium sound system</td></tr>
         <tr><td>8 Hours</td><td class="price-cell">$4,200</td><td class="price-cell">$4,800</td><td class="note">Ideal for events & celebrations</td></tr>
@@ -408,7 +498,7 @@
       </tbody></table>
     </div>
     <div class="tab-panel" id="tab-cantius">
-      <table class="pricing-table"><thead><tr><th>Duration</th><th>Weekday</th><th>Weekend</th><th>Notes</th></tr></thead><tbody>
+      <div class="pricing-table-scroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="pricing-table"><thead><tr><th>Duration</th><th>Weekday</th><th>Weekend</th><th>Notes</th></tr></thead><tbody>
         <tr><td>4 Hours</td><td class="price-cell">$1,600</td><td class="price-cell">$1,900</td><td class="note">Up to 10 guests · Captain included</td></tr>
         <tr><td>6 Hours</td><td class="price-cell">$2,200</td><td class="price-cell">$2,600</td><td class="note">Fuel included · Premium amenities</td></tr>
         <tr><td>8 Hours</td><td class="price-cell">$2,800</td><td class="price-cell">$3,200</td><td class="note">Coastal cruise available</td></tr>
@@ -416,7 +506,7 @@
       </tbody></table>
     </div>
     <div class="tab-panel" id="tab-captain">
-      <table class="pricing-table"><thead><tr><th>Service</th><th>Rate</th><th>Notes</th></tr></thead><tbody>
+      <div class="pricing-table-scroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="pricing-table"><thead><tr><th>Service</th><th>Rate</th><th>Notes</th></tr></thead><tbody>
         <tr><td>Day Charter Captain</td><td class="price-cell">$125/hr</td><td class="note">Minimum 4 hours · Your vessel</td></tr>
         <tr><td>Coastal Passage</td><td class="price-cell">$125/hr</td><td class="note">Multi-day available · Delivery welcome</td></tr>
         <tr><td>Offshore / International</td><td class="price-cell">Inquire</td><td class="note">Mexico, Pacific Islands & beyond</td></tr>
@@ -499,7 +589,7 @@
       </div>
       <div class="form-submit">
         <button type="submit" class="btn-primary">Send Charter Inquiry</button>
-        <p class="form-note">We respond within 24 hours &nbsp;·&nbsp; (949) 510-8682 &nbsp;·&nbsp; dale@fairwindsnewport.com</p>
+        <p class="form-note">We respond within 24 hours &nbsp;·&nbsp; (949) 510-8682 &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a6e6b666f4a6c6b63787d63646e79646f7d7a65787e24696567">[email&#160;protected]</a></p>
       </div>
     </form>
   </div>
@@ -513,7 +603,7 @@
     </div>
     <div class="footer-col"><h4>Fleet</h4><ul><li><a href="fairwinds-patriciaann.html">47' PatriciaAnn</a></li><li><a href="fairwinds-patron.html">73' Patron</a></li><li><a href="fairwinds-cantius.html">50' Cantius</a></li></ul></div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Private Charter</a></li><li><a href="#services">Captain Services</a></li><li><a href="fairwinds-lessons.html">Sailing Lessons</a></li><li><a href="#services">Bespoke Events</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br><a href="tel:9495108682">(949) 510-8682</a><br><a href="mailto:dale@fairwindsnewport.com">dale@fairwindsnewport.com</a><br><br><a href="https://www.instagram.com/fairwindsnewport/" target="_blank">@fairwindsnewport</a></address></div>
+    <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br><a href="tel:9495108682">(949) 510-8682</a><br><a href="/cdn-cgi/l/email-protection#593d38353c193f38302b2e30373d2a373c2e29362b2d773a3634"><span class="__cf_email__" data-cfemail="8de9ece1e8cdebece4fffae4e3e9fee3e8fafde2fff9a3eee2e0">[email&#160;protected]</span></a><br><br><a href="https://www.instagram.com/fairwindsnewport/" target="_blank">@fairwindsnewport</a></address></div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 Fairwinds, LLC · Newport Beach, California</p>
@@ -521,7 +611,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const PHOTOS = {
   "sailboat": [
     { caption: "Under Sail off Catalina", thumb: "patriciaann-00-under-sail-off-catalina-thumb.jpg", full: "patriciaann-00-under-sail-off-catalina.jpg" },
@@ -662,18 +752,4 @@ const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60));
 
 document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileNav").classList.add("open"));
-document.getElementById("mobileNavClose").addEventListener("click", closeMobileNav);
-function closeMobileNav() { document.getElementById("mobileNav").classList.remove("open"); }
-
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector("button[type='submit']");
-  btn.textContent = "Inquiry Sent — We'll Be in Touch";
-  btn.style.background = "var(--gold-dk)";
-  btn.disabled = true;
-}
-
-initGalleries();
-</script>
-</body>
-</html>
+document.getElementById("mobileNavClose").addEventListener("click", closeMobi

@@ -152,6 +152,62 @@
       .process-steps { grid-template-columns:repeat(2,1fr); gap:36px; }
       .process-steps::before { display:none; }
     }
+  
+    /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
+
+    /* Logo bigger */
+    .nav-logo-mark { height:64px !important; width:auto; }
+
+    /* Nav tighter so all items fit */
+    .nav-links { gap:clamp(6px,1.5vw,24px); }
+    .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
+    .nav-cta { padding:9px 14px; font-size:0.65rem; letter-spacing:0.12em; }
+
+    /* Hero eyebrow / subtitle visibility */
+    .hero-eyebrow { color:rgba(201,168,76,0.95) !important; font-size:0.75rem; text-shadow:0 1px 6px rgba(0,0,0,0.6); }
+    .page-subtitle { color:rgba(212,201,176,0.9) !important; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+
+    /* Footer responsive */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns:1fr 1fr !important; gap:32px; }
+    }
+    @media(max-width:540px) {
+      .footer-inner { grid-template-columns:1fr !important; gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; gap:8px; }
+    }
+
+    /* Pricing table scroll on mobile */
+    .pricing-section-inner, .pricing-tab-panel { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+    /* General section breathing room */
+    @media(max-width:600px) {
+      .section-title { font-size:clamp(1.7rem,6.5vw,3rem) !important; }
+      section { padding:clamp(36px,7vw,72px) 0; }
+    }
+
+    /* Nav hamburger adjustments */
+    @media(max-width:900px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex !important; }
+      .nav-cta { display:none; }
+    }
+    @media(min-width:901px) {
+      .hamburger { display:none !important; }
+      .nav-links { display:flex !important; }
+      .nav-cta { display:inline-block !important; }
+    }
+
+    @media(max-width:900px) {
+      .intro-inner { grid-template-columns:1fr !important; gap:40px; }
+      .svc-grid { grid-template-columns:repeat(2,1fr) !important; }
+      .process-grid { grid-template-columns:repeat(2,1fr) !important; }
+    }
+    @media(max-width:600px) {
+      .svc-grid { grid-template-columns:1fr !important; }
+      .process-grid { grid-template-columns:1fr !important; }
+      .wi-container { min-height:300px; }
+    }
+
   </style>
 </head>
 <body>
@@ -163,7 +219,6 @@
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
     <li><a href="fairwinds-consulting.html">Consulting</a></li>
-    <li><a href="index.html#experience">About</a></li>
     <li><a href="fairwinds-reviews.html">Reviews</a></li>
   </ul>
   <a href="index.html#booking" class="nav-cta">Book a Charter</a>
@@ -175,7 +230,6 @@
   <a href="index.html#services">Services</a>
   <a href="index.html#pricing">Pricing</a>
   <a href="fairwinds-lessons.html">Lessons</a>
-  <a href="index.html#experience">About</a>
   <a href="index.html#booking">Book</a>
 </div>
 
@@ -212,7 +266,7 @@
         <div class="dale-card-name">Captain Dale Winson</div>
         <div class="dale-card-title">USCG Licensed Master · Marine Consultant</div>
         <div class="dale-card-contact">
-          <a href="mailto:dale@fairwindsnewport.com">dale@fairwindsnewport.com</a>
+          <a href="/cdn-cgi/l/email-protection#593d38353c193f38302b2e30373d2a373c2e29362b2d773a3634"><span class="__cf_email__" data-cfemail="1a7e7b767f5a7c7b73686d73747e69747f6d6a75686e34797577">[email&#160;protected]</span></a>
           <a href="tel:9495108682">(949) 510-8682</a>
         </div>
       </div>
@@ -397,7 +451,7 @@
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br>
       <a href="tel:9495108682">(949) 510-8682</a><br>
-      <a href="mailto:dale@fairwindsnewport.com">dale@fairwindsnewport.com</a><br><br>
+      <a href="/cdn-cgi/l/email-protection#90f4f1fcf5d0f6f1f9e2e7f9fef4e3fef5e7e0ffe2e4bef3fffd"><span class="__cf_email__" data-cfemail="9bfffaf7fedbfdfaf2e9ecf2f5ffe8f5feecebf4e9efb5f8f4f6">[email&#160;protected]</span></a><br><br>
       <a href="https://www.instagram.com/fairwindsnewport/" target="_blank">@fairwindsnewport</a>
     </address></div>
   </div>
@@ -407,11 +461,5 @@
   </div>
 </footer>
 
-<script>
-const nav = document.getElementById("nav");
-window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60));
-document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileNav").classList.add("open"));
-document.getElementById("mobileNavClose").addEventListener("click", () => document.getElementById("mobileNav").classList.remove("open"));
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav = document.getElement

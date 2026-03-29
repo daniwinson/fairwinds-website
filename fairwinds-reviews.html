@@ -185,7 +185,62 @@
     }
       .mosaic-top { height:160px; }
       .mosaic-bottom { height:120px; }
-    }</style>
+    }
+    /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
+
+    /* Logo bigger */
+    .nav-logo-mark { height:64px !important; width:auto; }
+
+    /* Nav tighter so all items fit */
+    .nav-links { gap:clamp(6px,1.5vw,24px); }
+    .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
+    .nav-cta { padding:9px 14px; font-size:0.65rem; letter-spacing:0.12em; }
+
+    /* Hero eyebrow / subtitle visibility */
+    .hero-eyebrow { color:rgba(201,168,76,0.95) !important; font-size:0.75rem; text-shadow:0 1px 6px rgba(0,0,0,0.6); }
+    .page-subtitle { color:rgba(212,201,176,0.9) !important; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+
+    /* Footer responsive */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns:1fr 1fr !important; gap:32px; }
+    }
+    @media(max-width:540px) {
+      .footer-inner { grid-template-columns:1fr !important; gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; gap:8px; }
+    }
+
+    /* Pricing table scroll on mobile */
+    .pricing-section-inner, .pricing-tab-panel { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+    /* General section breathing room */
+    @media(max-width:600px) {
+      .section-title { font-size:clamp(1.7rem,6.5vw,3rem) !important; }
+      section { padding:clamp(36px,7vw,72px) 0; }
+    }
+
+    /* Nav hamburger adjustments */
+    @media(max-width:900px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex !important; }
+      .nav-cta { display:none; }
+    }
+    @media(min-width:901px) {
+      .hamburger { display:none !important; }
+      .nav-links { display:flex !important; }
+      .nav-cta { display:inline-block !important; }
+    }
+
+    @media(max-width:700px) {
+      .stats-inner { grid-template-columns:repeat(2,1fr) !important; gap:16px; }
+      .source-cards { grid-template-columns:1fr !important; }
+      .filter-bar { width:100%; flex-wrap:wrap; }
+      .filter-btn { flex:1 1 auto; text-align:center; }
+    }
+    @media(max-width:440px) {
+      .stats-inner { grid-template-columns:1fr !important; }
+    }
+
+  </style>
 </head>
 <body>
 <nav id="nav">
@@ -493,7 +548,7 @@
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br>
       <a href="tel:9495108682">(949) 510-8682</a><br>
-      <a href="mailto:dale@fairwindsnewport.com">dale@fairwindsnewport.com</a><br><br>
+      <a href="/cdn-cgi/l/email-protection#55313439301533343c27223c3b31263b3022253a27217b363a38"><span class="__cf_email__" data-cfemail="9ffbfef3fadff9fef6ede8f6f1fbecf1fae8eff0edebb1fcf0f2">[email&#160;protected]</span></a><br><br>
       <a href="https://www.instagram.com/fairwindsnewport/" target="_blank">@fairwindsnewport</a>
     </address></div>
   </div>
@@ -503,7 +558,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 let activeVessel = 'all';
 let activeSource = null;
@@ -562,13 +617,4 @@ function closeMosaicLightbox() {
   document.body.style.overflow = '';
 }
 function mosaicLBNav(dir) {
-  mosaicIdx = (mosaicIdx + dir + MOSAIC_IMGS.length) % MOSAIC_IMGS.length;
-  document.getElementById('mlb-img').src = MOSAIC_IMGS[mosaicIdx];
-}
-document.getElementById('mosaic-lightbox').addEventListener('click', function(e) {
-  if (e.target === this) closeMosaicLightbox();
-});
-
-</script>
-</body>
-</html>
+  mosaicIdx = (mosaicIdx + dir + MOSAIC_IMGS.lengt
