@@ -123,6 +123,62 @@
     .cta-band p { font-size: 0.85rem; color: var(--text-lt); margin-bottom: 32px; letter-spacing: 0.05em; }
     .cta-band .actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     @media (max-width: 900px) { .overview-inner { grid-template-columns: 1fr; gap: 32px; } }
+  
+    /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
+
+    /* Logo bigger */
+    .nav-logo-mark { height:64px !important; width:auto; }
+
+    /* Nav tighter so all items fit */
+    .nav-links { gap:clamp(6px,1.5vw,24px); }
+    .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
+    .nav-cta { padding:9px 14px; font-size:0.65rem; letter-spacing:0.12em; }
+
+    /* Hero eyebrow / subtitle visibility */
+    .hero-eyebrow { color:rgba(201,168,76,0.95) !important; font-size:0.75rem; text-shadow:0 1px 6px rgba(0,0,0,0.6); }
+    .page-subtitle { color:rgba(212,201,176,0.9) !important; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+
+    /* Footer responsive */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns:1fr 1fr !important; gap:32px; }
+    }
+    @media(max-width:540px) {
+      .footer-inner { grid-template-columns:1fr !important; gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; gap:8px; }
+    }
+
+    /* Pricing table scroll on mobile */
+    .pricing-section-inner, .pricing-tab-panel { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+    /* General section breathing room */
+    @media(max-width:600px) {
+      .section-title { font-size:clamp(1.7rem,6.5vw,3rem) !important; }
+      section { padding:clamp(36px,7vw,72px) 0; }
+    }
+
+    /* Nav hamburger adjustments */
+    @media(max-width:900px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex !important; }
+      .nav-cta { display:none; }
+    }
+    @media(min-width:901px) {
+      .hamburger { display:none !important; }
+      .nav-links { display:flex !important; }
+      .nav-cta { display:inline-block !important; }
+    }
+
+    @media(max-width:900px) {
+      .boat-overview { grid-template-columns:1fr !important; }
+    }
+    @media(max-width:700px) {
+      .boat-pricing-table th, .boat-pricing-table td { padding:8px 10px; font-size:0.76rem; }
+      .gallery-grid { grid-template-columns:repeat(2,1fr) !important; }
+    }
+    @media(max-width:440px) {
+      .gallery-grid { grid-template-columns:1fr !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -134,7 +190,6 @@
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
     <li><a href="fairwinds-consulting.html">Consulting</a></li>
-    <li><a href="index.html#experience">About</a></li>
     <li><a href="fairwinds-reviews.html">Reviews</a></li>
   </ul>
   <a href="index.html#booking" class="nav-cta">Book a Charter</a>
@@ -146,7 +201,6 @@
   <a href="index.html#services">Services</a>
   <a href="index.html#pricing">Pricing</a>
   <a href="fairwinds-lessons.html">Lessons</a>
-  <a href="index.html#experience">About</a>
   <a href="index.html#booking">Book</a>
 </div>
 
@@ -233,17 +287,13 @@
           <img src="patriciaann-10-family-charter-thumb.jpg" alt="Family Charter" loading="lazy" />
           <div class="thumb-caption">Family Charter</div>
         </div>
-<div class="thumb-item" onclick="openLightbox(BOAT_PHOTOS,11)">
-          <img src="patriciaann-11-deck-life-thumb.jpg" alt="Deck Life" loading="lazy" />
-          <div class="thumb-caption">Deck Life</div>
-        </div>
 
 
-          <div class="thumb-item" onclick="openLightbox(BOAT_PHOTOS,13)">
+          <div class="thumb-item" onclick="openLightbox(BOAT_PHOTOS,12)">
             <img src="patriciaann-13-captain-dale-at-sea-thumb.jpg" alt="Couple at the Helm" loading="lazy" />
             <div class="thumb-caption">Couple at the Helm</div>
           </div>
-          <div class="thumb-item" onclick="openLightbox(BOAT_PHOTOS,14)">
+          <div class="thumb-item" onclick="openLightbox(BOAT_PHOTOS,13)">
             <img src="patriciaann-14-sunset-sail-thumb.jpg" alt="Captain Dale at Sea" loading="lazy" />
             <div class="thumb-caption">Captain Dale at Sea</div>
           </div>
@@ -257,7 +307,7 @@
   <div class="pricing-inner">
     <span class="section-label">Transparent Pricing</span>
     <h2 class="section-title">Charter Rates —<br><em>PatriciaAnn</em></h2>
-    <table class="pricing-table">
+    <div class="pricing-table-scroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="pricing-table">
       <thead><tr><th>Duration</th><th>Weekday</th><th>Weekend / Holiday</th><th>Includes</th></tr></thead>
       <tbody><tr><td>4 Hours</td><td class="price-cell">$950</td><td class="price-cell">$1,100</td><td class="note">Up to 6 guests · Captain included</td></tr><tr><td>6 Hours</td><td class="price-cell">$1,350</td><td class="price-cell">$1,550</td><td class="note">Fuel included · Departs Newport Harbor</td></tr><tr><td>8 Hours</td><td class="price-cell">$1,700</td><td class="price-cell">$1,950</td><td class="note">Catalina day trip available</td></tr><tr><td>Full Day (10 hrs)</td><td class="price-cell">$2,100</td><td class="price-cell">$2,400</td><td class="note">Custom itinerary on request</td></tr><tr><td>Overnight / Multi-day</td><td class="price-cell">Inquire</td><td class="price-cell">Inquire</td><td class="note">Call or email for availability</td></tr></tbody>
     </table>
@@ -326,7 +376,6 @@ const BOAT_PHOTOS = [
   {"caption": "Sailing Newport", "thumb": "patriciaann-08-sailing-newport-thumb.jpg", "full": "patriciaann-08-sailing-newport.jpg"},
   {"caption": "At the Helm", "thumb": "patriciaann-09-at-the-helm-thumb.jpg", "full": "patriciaann-09-at-the-helm.jpg"},
   {"caption": "Family Charter", "thumb": "patriciaann-10-family-charter-thumb.jpg", "full": "patriciaann-10-family-charter.jpg"},
-  {"caption": "Deck Life", "thumb": "patriciaann-11-deck-life-thumb.jpg", "full": "patriciaann-11-deck-life.jpg"},
   {"caption": "Couple at the Helm", "thumb": "patriciaann-12-couple-at-the-helm-thumb.jpg", "full": "patriciaann-12-couple-at-the-helm.jpg"},
   {"caption": "Captain Dale at Sea", "thumb": "patriciaann-13-captain-dale-at-sea-thumb.jpg", "full": "patriciaann-13-captain-dale-at-sea.jpg"},
   {"caption": "Sunset Sail", "thumb": "patriciaann-14-sunset-sail-thumb.jpg", "full": "patriciaann-14-sunset-sail.jpg"}

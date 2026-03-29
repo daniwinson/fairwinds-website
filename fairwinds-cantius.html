@@ -123,6 +123,62 @@
     .cta-band p { font-size: 0.85rem; color: var(--text-lt); margin-bottom: 32px; letter-spacing: 0.05em; }
     .cta-band .actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     @media (max-width: 900px) { .overview-inner { grid-template-columns: 1fr; gap: 32px; } }
+  
+    /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
+
+    /* Logo bigger */
+    .nav-logo-mark { height:64px !important; width:auto; }
+
+    /* Nav tighter so all items fit */
+    .nav-links { gap:clamp(6px,1.5vw,24px); }
+    .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
+    .nav-cta { padding:9px 14px; font-size:0.65rem; letter-spacing:0.12em; }
+
+    /* Hero eyebrow / subtitle visibility */
+    .hero-eyebrow { color:rgba(201,168,76,0.95) !important; font-size:0.75rem; text-shadow:0 1px 6px rgba(0,0,0,0.6); }
+    .page-subtitle { color:rgba(212,201,176,0.9) !important; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+
+    /* Footer responsive */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns:1fr 1fr !important; gap:32px; }
+    }
+    @media(max-width:540px) {
+      .footer-inner { grid-template-columns:1fr !important; gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; gap:8px; }
+    }
+
+    /* Pricing table scroll on mobile */
+    .pricing-section-inner, .pricing-tab-panel { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+    /* General section breathing room */
+    @media(max-width:600px) {
+      .section-title { font-size:clamp(1.7rem,6.5vw,3rem) !important; }
+      section { padding:clamp(36px,7vw,72px) 0; }
+    }
+
+    /* Nav hamburger adjustments */
+    @media(max-width:900px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex !important; }
+      .nav-cta { display:none; }
+    }
+    @media(min-width:901px) {
+      .hamburger { display:none !important; }
+      .nav-links { display:flex !important; }
+      .nav-cta { display:inline-block !important; }
+    }
+
+    @media(max-width:900px) {
+      .boat-overview { grid-template-columns:1fr !important; }
+    }
+    @media(max-width:700px) {
+      .boat-pricing-table th, .boat-pricing-table td { padding:8px 10px; font-size:0.76rem; }
+      .gallery-grid { grid-template-columns:repeat(2,1fr) !important; }
+    }
+    @media(max-width:440px) {
+      .gallery-grid { grid-template-columns:1fr !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -134,7 +190,6 @@
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
     <li><a href="fairwinds-consulting.html">Consulting</a></li>
-    <li><a href="index.html#experience">About</a></li>
     <li><a href="fairwinds-reviews.html">Reviews</a></li>
   </ul>
   <a href="index.html#booking" class="nav-cta">Book a Charter</a>
@@ -146,7 +201,6 @@
   <a href="index.html#services">Services</a>
   <a href="index.html#pricing">Pricing</a>
   <a href="fairwinds-lessons.html">Lessons</a>
-  <a href="index.html#experience">About</a>
   <a href="index.html#booking">Book</a>
 </div>
 
@@ -228,7 +282,7 @@
   <div class="pricing-inner">
     <span class="section-label">Transparent Pricing</span>
     <h2 class="section-title">Charter Rates —<br><em>Cantius 50</em></h2>
-    <table class="pricing-table">
+    <div class="pricing-table-scroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="pricing-table">
       <thead><tr><th>Duration</th><th>Weekday</th><th>Weekend / Holiday</th><th>Includes</th></tr></thead>
       <tbody><tr><td>4 Hours</td><td class="price-cell">$1,600</td><td class="price-cell">$1,900</td><td class="note">Up to 10 guests · Captain included</td></tr><tr><td>6 Hours</td><td class="price-cell">$2,200</td><td class="price-cell">$2,600</td><td class="note">Fuel included · Premium amenities</td></tr><tr><td>8 Hours</td><td class="price-cell">$2,800</td><td class="price-cell">$3,200</td><td class="note">Catalina passage available</td></tr><tr><td>Full Day (10 hrs)</td><td class="price-cell">$3,400</td><td class="price-cell">$3,900</td><td class="note">Custom itinerary on request</td></tr><tr><td>Overnight / Multi-day</td><td class="price-cell">Inquire</td><td class="price-cell">Inquire</td><td class="note">Call or email for availability</td></tr></tbody>
     </table>
@@ -265,7 +319,7 @@
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br>
       <a href="tel:9495108682">(949) 510-8682</a><br>
-      <a href="mailto:dale@fairwindsnewport.com">dale@fairwindsnewport.com</a><br><br>
+      <a href="/cdn-cgi/l/email-protection#7a1e1b161f3a1c1b13080d13141e09141f0d0a15080e54191517"><span class="__cf_email__" data-cfemail="94f0f5f8f1d4f2f5fde6e3fdfaf0e7faf1e3e4fbe6e0baf7fbf9">[email&#160;protected]</span></a><br><br>
       <a href="https://www.instagram.com/fairwindsnewport/" target="_blank">@fairwindsnewport</a>
     </address></div>
   </div>
@@ -284,7 +338,7 @@
   <div class="lb-thumbstrip" id="lb-thumbstrip"></div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const BOAT_PHOTOS = [
   {"caption": "Cantius 50 \u2014 Running Full", "thumb": "cantius-00-cantius-50-u2014-running-full-thumb.jpg", "full": "cantius-00-cantius-50-u2014-running-full.jpg"},
   {"caption": "Aerial View", "thumb": "cantius-01-aerial-view-thumb.jpg", "full": "cantius-01-aerial-view.jpg"},
@@ -334,9 +388,4 @@ document.getElementById("lightbox").addEventListener("click", e => { if(e.target
 
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60));
-document.getElementById("hamburger").addEventListener("click", () => document.getElementById("mobileNav").classList.add("open"));
-document.getElementById("mobileNavClose").addEventListener("click", () => document.getElementById("mobileNav").classList.remove("open"));
-
-</script>
-</body>
-</html>
+document.getElementById("hamburger").ad
