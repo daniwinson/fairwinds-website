@@ -19,7 +19,7 @@
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(to bottom, rgba(10,22,40,0.97), rgba(10,22,40,0)); transition: background 0.4s; }
     nav.scrolled { background: rgba(10,22,40,0.97) !important; border-bottom: 1px solid rgba(201,168,76,0.2); }
     .nav-logo-img { text-decoration:none; display:flex; align-items:center; }
-    .nav-logo-mark { height:48px; width:auto; display:block; }
+    .nav-logo-mark { height:68px; width:auto; display:block; }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; display: flex; flex-direction: column; line-height: 1.1; }
     .nav-logo span { font-size: 0.55rem; letter-spacing: 0.35em; color: var(--text-lt); font-family: 'Raleway', sans-serif; font-weight: 300; }
     .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -125,10 +125,6 @@
     @media (max-width: 900px) { .overview-inner { grid-template-columns: 1fr; gap: 32px; } }
   
     /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
-
-    /* Logo bigger */
-    .nav-logo-mark { height:64px !important; width:auto; }
-
     /* Nav tighter so all items fit */
     .nav-links { gap:clamp(6px,1.5vw,24px); }
     .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
