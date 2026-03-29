@@ -17,12 +17,12 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Raleway', sans-serif; background: var(--navy); color: var(--cream); overflow-x: hidden; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(to bottom, rgba(10,22,40,0.97), rgba(10,22,40,0)); transition: background 0.4s; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px clamp(16px,3vw,40px); background: linear-gradient(to bottom, rgba(10,22,40,0.97), rgba(10,22,40,0)); transition: background 0.4s; }
     nav.scrolled { background: rgba(10,22,40,0.97) !important; border-bottom: 1px solid rgba(201,168,76,0.2); }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; display: flex; flex-direction: column; line-height: 1.1; }
     .nav-logo span { font-size: 0.55rem; letter-spacing: 0.35em; color: var(--text-lt); font-family: 'Raleway', sans-serif; font-weight: 300; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links { display: flex; gap: clamp(8px,1.4vw,22px); list-style: none; }
+    .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 24px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; }
     .nav-cta:hover { background: var(--gold); color: var(--navy); }
@@ -187,6 +187,8 @@
       .mosaic-bottom { height:120px; }
     }
     /* ═══ GLOBAL RESPONSIVE FIXES ═══ */
+
+    /* Logo bigger */
     /* Nav tighter so all items fit */
     .nav-links { gap:clamp(6px,1.5vw,24px); }
     .nav-links a { font-size:0.67rem; letter-spacing:0.09em; }
@@ -247,7 +249,7 @@
     <li><a href="index.html#fleet">Our Fleet</a></li>
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
-    <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
+    <li><a href="fairwinds-lessons.html">Lessons</a></li>
     <li><a href="fairwinds-consulting.html">Consulting</a></li>
     <li><a href="fairwinds-reviews.html" class="active">Reviews</a></li>
   </ul>
@@ -256,7 +258,9 @@
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" id="mobileNavClose">✕</button>
-  <a href="index.html#fleet">Fleet</a>
+  <a href="index.html#fleet">Our Fleet</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#pricing">Pricing</a>
   <a href="fairwinds-lessons.html">Lessons</a>
   <a href="fairwinds-consulting.html">Consulting</a>
   <a href="fairwinds-reviews.html">Reviews</a>
@@ -528,18 +532,18 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo-img"><img src="logo-00.png" alt="Fairwinds" class="nav-logo-mark" /></a>
+      <a href="index.html" class="nav-logo-img"><img src="logo-00.png" alt="Fairwinds" class="nav-logo-mark" style="height:52px" /></a>
       <p>Private yacht charters, professional captains, and bespoke sailing experiences on the waters of Newport Harbor and the California coast.</p>
     </div>
     <div class="footer-col"><h4>Fleet</h4><ul>
       <li><a href="fairwinds-patriciaann.html">47' PatriciaAnn</a></li>
-      <li><a href="mystic.html">73' Mystic</a></li>
+      <li><a href="fairwinds-patron.html">73' Patron</a></li>
       <li><a href="fairwinds-cantius.html">50' Cantius</a></li>
     </ul></div>
     <div class="footer-col"><h4>Services</h4><ul>
       <li><a href="index.html#services">Private Charter</a></li>
       <li><a href="index.html#services">Captain Services</a></li>
-      <li><a href="fairwinds-lessons.html">Sailing Lessons</a></li>
+      <li><a href="fairwinds-lessons.html">Lessons</a></li>
       <li><a href="index.html#services">Bespoke Events</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><address>Newport Beach, CA<br><br>
@@ -554,40 +558,8 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-
-let activeVessel = 'all';
-let activeSource = null;
-function applyFilters() {
-  document.querySelectorAll('.review-card').forEach(card => {
-    const vesselMatch = activeVessel === 'all' || card.dataset.vessel.includes(activeVessel);
-    const srcBadge = card.querySelector('.review-source-badge');
-    const cardSource = srcBadge ? srcBadge.textContent.trim() : '';
-    const sourceMatch = !activeSource || cardSource === activeSource;
-    card.classList.toggle('hidden', !(vesselMatch && sourceMatch));
-  });
-}
-function filterVessel(vessel, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  activeVessel = vessel;
-  applyFilters();
-}
-function filterSource(src) {
-  const gmbBtn = document.getElementById('btn-gmb');
-  const bsBtn  = document.getElementById('btn-bs');
-  if (activeSource === src) {
-    activeSource = null;
-    gmbBtn.className = 'source-filter-btn';
-    bsBtn.className  = 'source-filter-btn';
-  } else {
-    activeSource = src;
-    gmbBtn.className = 'source-filter-btn' + (src === 'GetMyBoat'  ? ' active-gmb' : '');
-    bsBtn.className  = 'source-filter-btn' + (src === 'Boatsetter' ? ' active-bs'  : '');
-  }
-  applyFilters();
-}
-
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60));
@@ -595,16 +567,77 @@ document.getElementById("hamburger").addEventListener("click", () => document.ge
 document.getElementById("mobileNavClose").addEventListener("click", () => document.getElementById("mobileNav").classList.remove("open"));
 
 
-const MOSAIC_IMGS = [
-  'reviews-strip-01-guests-under-full-sail-off-newport-beach.jpg',
-  'reviews-strip-00-couple-at-helm.jpg',
-  'reviews-strip-02-captain-dale-at-sea.jpg',
-  'reviews-strip-03-guests-relaxing-on-the-water.jpg'
-];
-let mosaicIdx = 0;
+let lbPhotos = [], lbIdx = 0;
+function openLightbox(photos, idx) {
+  lbPhotos = photos; lbIdx = idx;
+  document.getElementById("lightbox").classList.add("open");
+  document.body.style.overflow = "hidden";
+  renderLB(); buildStrip();
+}
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("open");
+  document.body.style.overflow = "";
+}
+function renderLB() {
+  const p = lbPhotos[lbIdx];
+  const img = document.getElementById("lb-img");
+  img.classList.add("fading");
+  setTimeout(() => {
+    img.src = p.full ? p.full : p.thumb;
+    img.classList.remove("fading");
+  }, 180);
+  const cap = document.getElementById("lb-caption");
+  if (cap) cap.textContent = p.caption || "";
+  const ctr = document.getElementById("lb-counter");
+  if (ctr) ctr.textContent = (lbIdx + 1) + " / " + lbPhotos.length;
+}
+function buildStrip() {
+  const strip = document.getElementById("lb-strip");
+  if (!strip) return;
+  strip.innerHTML = "";
+  lbPhotos.forEach((p, i) => {
+    const img = document.createElement("img");
+    img.className = "lb-strip-thumb" + (i === lbIdx ? " active" : "");
+    img.src = p.thumb;
+    img.onclick = () => { lbIdx = i; renderLB(); buildStrip(); };
+    strip.appendChild(img);
+  });
+}
+function lbNav(dir) {
+  lbIdx = (lbIdx + dir + lbPhotos.length) % lbPhotos.length;
+  renderLB(); buildStrip();
+}
+document.addEventListener("keydown", e => {
+  if (!document.getElementById("lightbox").classList.contains("open")) return;
+  if (e.key === "ArrowRight") lbNav(1);
+  if (e.key === "ArrowLeft") lbNav(-1);
+  if (e.key === "Escape") closeLightbox();
+});
+
+
+let activeVessel = 'all', activeSource = null;
+function applyFilters() {
+  document.querySelectorAll('.review-card').forEach(card => {
+    const vm = activeVessel === 'all' || card.dataset.vessel.includes(activeVessel);
+    const sb = card.querySelector('.review-source-badge');
+    const sm = !activeSource || (sb && sb.textContent.trim() === activeSource);
+    card.classList.toggle('hidden', !(vm && sm));
+  });
+}
+function filterVessel(v, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active'); activeVessel = v; applyFilters();
+}
+function filterSource(src) {
+  const g = document.getElementById('btn-gmb'), b = document.getElementById('btn-bs');
+  if (activeSource === src) { activeSource = null; g.className = b.className = 'source-filter-btn'; }
+  else { activeSource = src; g.className = 'source-filter-btn' + (src==='GetMyBoat' ? ' active-gmb':''); b.className = 'source-filter-btn' + (src==='Boatsetter' ? ' active-bs':''); }
+  applyFilters();
+}
 function openMosaicLightbox(idx) {
-  mosaicIdx = idx;
-  document.getElementById('mlb-img').src = MOSAIC_IMGS[idx];
+  const imgs = ['reviews-strip-01-guests-under-full-sail-off-newport-beach.jpg','reviews-strip-00-couple-at-helm.jpg','reviews-strip-02-captain-dale-at-sea.jpg','reviews-strip-03-guests-relaxing-on-the-water.jpg'];
+  document.getElementById('mlb-img').src = imgs[idx];
+  window._mosaicIdx = idx; window._mosaicImgs = imgs;
   document.getElementById('mosaic-lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -613,4 +646,12 @@ function closeMosaicLightbox() {
   document.body.style.overflow = '';
 }
 function mosaicLBNav(dir) {
-  mosaicIdx = (mosaicIdx + dir + MOSAIC_IMGS.lengt
+  const imgs = window._mosaicImgs || [];
+  window._mosaicIdx = ((window._mosaicIdx||0) + dir + imgs.length) % imgs.length;
+  document.getElementById('mlb-img').src = imgs[window._mosaicIdx];
+}
+document.getElementById('mosaic-lightbox').addEventListener('click', function(e){ if(e.target===this) closeMosaicLightbox(); });
+
+</script>
+</body>
+</html>
