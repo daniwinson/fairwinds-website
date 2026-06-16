@@ -228,7 +228,7 @@
 <body>
 <nav id="nav">
   <a href="index.html" class="nav-logo-img">
-    <img src="logo-00.png" alt="Fairwinds Luxury Yacht Charter" class="nav-logo-mark" />
+    <img src="logo-00.png" alt="Fairwinds Luxury Yacht Charter" class="nav-logo-mark" style="width: 150px; height: 150px" />
   </a>
   <ul class="nav-links">
     <li><a href="index.html#fleet">Our Fleet</a></li>
@@ -444,7 +444,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Can we sail to Catalina during a lesson? <span class="arrow">+</span></button>
-      <div class="faq-a">It's one of Dale's favorite teaching passages. The crossing from Newport to Catalina provides excellent variety — harbor departure, open water sailing, anchoring, and a beautiful destination. An 8-hour or overnight format works best.</div>
+      <div class="faq-a">It's one of Dale's favorite teaching passages. The crossing from Newport to Catalina provides excellent variety — harbor departure, open water sailing, anchoring, and a beautiful destination. An overnight format works best.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">What should I bring? <span class="arrow">+</span></button>
@@ -548,6 +548,18 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeLightbox();
 });
 
+
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-a');
+  const isOpen = btn.classList.contains('open');
+  // Close all others (one-open-at-a-time behavior)
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    if (b !== btn) { b.classList.remove('open'); b.parentElement.querySelector('.faq-a').classList.remove('open'); }
+  });
+  btn.classList.toggle('open', !isOpen);
+  answer.classList.toggle('open', !isOpen);
+}
 
 </script>
 </body>
