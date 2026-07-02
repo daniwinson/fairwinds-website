@@ -266,8 +266,12 @@
       .yacht-info { padding:28px !important; }
     }
     @media(max-width:700px) {
-      .yacht-tabs { flex-wrap:wrap; }
-      .yacht-tab-btn { padding:12px 20px; font-size:0.68rem; }
+      /* Stack all vessels vertically — hide tabs entirely */
+      .yacht-tabs { display: none; }
+      .yacht-panel { display: block !important; animation: none !important; }
+      .yacht-panel + .yacht-panel { border-top: 1px solid rgba(201,168,76,0.18); margin-top: 48px; padding-top: 48px; }
+      /* Hide thumbnail grids on mobile — each vessel has its own gallery page */
+      .yacht-thumbs { display: none; }
     }
     /* Stats band */
     @media(max-width:700px) {
